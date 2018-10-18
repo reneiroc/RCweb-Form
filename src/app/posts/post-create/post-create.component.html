@@ -1,0 +1,17 @@
+
+<mat-card>
+    <mat-form-field>
+
+      <input matInput placeholder="Title" name="" id="" [(ngModel)]= "enteredTitle" cols="10" rows="10">
+
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Contenido" name="" id="" [(ngModel)]= "enteredContent" cols="10" rows="10"> </textarea>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)= "onAddPost()">Enviar</button>
+</mat-card>
+
