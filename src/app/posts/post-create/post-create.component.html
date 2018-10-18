@@ -1,17 +1,37 @@
 
 <mat-card>
+  <!-- Referencia local del formulario para poder accesar al formulario en javascript  -->
+  <form (click)= "onAddPost(postForm)" #postForm= "ngForm">
     <mat-form-field>
 
-      <input matInput placeholder="Title" name="" id="" [(ngModel)]= "enteredTitle" cols="10" rows="10">
-
+      <!-- <input matInput placeholder="Title" name="" id="" [(ngModel)]= "enteredTitle" cols="10" rows="10"> -->
+      <input
+        matInput
+        placeholder="Title"
+        name="title"
+        ngModel
+        required
+        #title ="ngModel"
+        cols="10" rows="10">
+        <mat-error *ngIf="title.invalid">Debe ingresar un valor</mat-error>
     </mat-form-field>
     <mat-form-field>
-      <textarea matInput placeholder="Contenido" name="" id="" [(ngModel)]= "enteredContent" cols="10" rows="10"> </textarea>
+      <!-- <textarea matInput placeholder="Contenido" name="" id="" [(ngModel)]= "enteredContent" cols="10" rows="10"> </textarea> -->
+      <textarea
+      matInput
+      placeholder="Contenido"
+      name="content"
+      ngModel
+      required
+      #content = "ngModel"
+      cols="10" rows="10">
+      <mat-error *ngIf="content.invalid">Debe ingresar un valor</mat-error>
+    </textarea>
     </mat-form-field>
     <button
       mat-raised-button
       color="primary"
-      type="submit"
-      (click)= "onAddPost()">Enviar</button>
+      type="submit">Enviar</button>
+  </form>
 </mat-card>
 
